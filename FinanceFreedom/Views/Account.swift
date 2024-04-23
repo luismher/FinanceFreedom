@@ -13,14 +13,13 @@ struct Account: View {
 
     var body: some View {
         NavigationStack {
-            ZStack{
-                Color(Color.primaryColor1)
-                    .ignoresSafeArea()
+          
                 VStack {
                     VStack {
                         Text("Personal Information")
-                        }.padding()
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 40)
                     
                     HStack{
                         Image("FFLogo")
@@ -33,13 +32,13 @@ struct Account: View {
                     }.frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     VStack{
-                        Text("First Name")
+                        Text("First Name *")
                             .frame(maxWidth: .infinity, alignment: .leading)
                         TextField("", text: $firstName)
-                        Text("Last Name")
+                        Text("Last Name *")
                             .frame(maxWidth: .infinity, alignment: .leading)
                         TextField("", text: $firstName)
-                        Text("Email")
+                        Text("Email *")
                             .frame(maxWidth: .infinity, alignment: .leading)
                         TextField("", text: $firstName)
                         Text("Phone")
@@ -56,7 +55,10 @@ struct Account: View {
                         .padding()
                     Toggle("Payment Reminder", isOn: $toggle)
                         .padding()
-                }
+                    Button("Logout"){}
+                        .buttonStyle(buttonGray())
+                        .padding(.bottom)
+                        .padding()
             }
         }
     }

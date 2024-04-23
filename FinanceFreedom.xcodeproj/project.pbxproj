@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		702456E92BD6AF1C00422BEA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456E82BD6AF1C00422BEA /* Models.swift */; };
 		709AF09B2BBED2E7003ABF60 /* FinanceFreedomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */; };
 		709AF09D2BBED2E7003ABF60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF09C2BBED2E7003ABF60 /* ContentView.swift */; };
 		709AF09F2BBED2E9003ABF60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709AF09E2BBED2E9003ABF60 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		702456E82BD6AF1C00422BEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		709AF0972BBED2E7003ABF60 /* FinanceFreedom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceFreedom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceFreedomApp.swift; sourceTree = "<group>"; };
 		709AF09C2BBED2E7003ABF60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702456EA2BD6AF3400422BEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				702456E82BD6AF1C00422BEA /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		709AF08E2BBED2E7003ABF60 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 			children = (
 				709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */,
 				709AF0B82BC027CB003ABF60 /* Styles.swift */,
+				702456EA2BD6AF3400422BEA /* Models */,
 				709AF0B12BC023FC003ABF60 /* Views */,
 				709AF09C2BBED2E7003ABF60 /* ContentView.swift */,
 				709AF0BB2BC06DB8003ABF60 /* Finnance Freedom Logo.jpeg */,
@@ -179,6 +190,7 @@
 				709AF0A42BBED2E9003ABF60 /* Persistence.swift in Sources */,
 				709AF0B92BC027CB003ABF60 /* Styles.swift in Sources */,
 				709AF0A72BBED2E9003ABF60 /* FinanceFreedom.xcdatamodeld in Sources */,
+				702456E92BD6AF1C00422BEA /* Models.swift in Sources */,
 				709AF0B02BC023D0003ABF60 /* MyFinance.swift in Sources */,
 				709AF0BE2BC06DDC003ABF60 /* Logo.swift in Sources */,
 				709AF0AE2BC0238D003ABF60 /* Onboarding.swift in Sources */,
