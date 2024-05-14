@@ -13,8 +13,7 @@ struct Account: View {
 
     var body: some View {
         NavigationStack {
-          
-                VStack {
+                ScrollView {
                     VStack {
                         Text("Personal Information")
                         }

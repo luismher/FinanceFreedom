@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		702456E92BD6AF1C00422BEA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456E82BD6AF1C00422BEA /* Models.swift */; };
 		702456EE2BF2CEE200422BEA /* CreateForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456ED2BF2CEE200422BEA /* CreateForm.swift */; };
+		702456F02BF3B88A00422BEA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456EF2BF3B88A00422BEA /* Home.swift */; };
 		709AF09B2BBED2E7003ABF60 /* FinanceFreedomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */; };
 		709AF09D2BBED2E7003ABF60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF09C2BBED2E7003ABF60 /* ContentView.swift */; };
 		709AF09F2BBED2E9003ABF60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709AF09E2BBED2E9003ABF60 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		702456E82BD6AF1C00422BEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		702456ED2BF2CEE200422BEA /* CreateForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateForm.swift; sourceTree = "<group>"; };
+		702456EF2BF3B88A00422BEA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		709AF0972BBED2E7003ABF60 /* FinanceFreedom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceFreedom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceFreedomApp.swift; sourceTree = "<group>"; };
 		709AF09C2BBED2E7003ABF60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,12 +111,13 @@
 			isa = PBXGroup;
 			children = (
 				709AF0AD2BC0238D003ABF60 /* Onboarding.swift */,
-				702456ED2BF2CEE200422BEA /* CreateForm.swift */,
 				709AF0AF2BC023D0003ABF60 /* MyFinance.swift */,
+				702456EF2BF3B88A00422BEA /* Home.swift */,
 				709AF0B22BC02426003ABF60 /* Details.swift */,
 				709AF0B42BC02486003ABF60 /* DetailsCard.swift */,
 				709AF0BD2BC06DDC003ABF60 /* Logo.swift */,
 				709AF0B62BC0249C003ABF60 /* Account.swift */,
+				702456ED2BF2CEE200422BEA /* CreateForm.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				709AF0A72BBED2E9003ABF60 /* FinanceFreedom.xcdatamodeld in Sources */,
 				702456E92BD6AF1C00422BEA /* Models.swift in Sources */,
 				709AF0B02BC023D0003ABF60 /* MyFinance.swift in Sources */,
+				702456F02BF3B88A00422BEA /* Home.swift in Sources */,
 				709AF0BE2BC06DDC003ABF60 /* Logo.swift in Sources */,
 				709AF0AE2BC0238D003ABF60 /* Onboarding.swift in Sources */,
 				709AF0B52BC02486003ABF60 /* DetailsCard.swift in Sources */,

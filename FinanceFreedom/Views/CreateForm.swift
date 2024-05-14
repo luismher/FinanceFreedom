@@ -39,7 +39,7 @@ struct CreateForm: View {
                         .cornerRadius(8)
                         .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
                         .background(Color.gray.opacity(0.1))
-                        .frame(minHeight: 160)
+                        .frame(minHeight: 220)
                         .padding()
                 }
             }

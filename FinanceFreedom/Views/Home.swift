@@ -9,7 +9,20 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationView {
+                TabView {
+                    MyFinance()
+                        .tabItem { Label("My Finnance", systemImage: "house.circle") }
+                    CreateForm()
+                        .tabItem { Label("Create", systemImage: "plus.circle") }
+                    Details()
+                        .tabItem { Label("Details", systemImage: "checklist.checked") }
+                    Account()
+                        .tabItem { Label("Settings", systemImage: "gear") }
+                
+                }.tabViewStyle(.automatic)
+        }
     }
 }
 
