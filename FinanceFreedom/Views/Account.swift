@@ -13,12 +13,13 @@ struct Account: View {
 
     var body: some View {
         NavigationStack {
+            
                 ScrollView {
                     VStack {
                         Text("Personal Information")
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 40)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 40)
                     
                     HStack{
                         Image("FFLogo")
@@ -26,7 +27,7 @@ struct Account: View {
                             .frame(width: 80, height: 80)
                             .clipShape(Circle())
                             .padding(.trailing)
-                        Button("Edit"){}
+                        Button("Save"){}
                             .padding()
                     }.frame(maxWidth: .infinity, alignment: .leading)
                         .padding()

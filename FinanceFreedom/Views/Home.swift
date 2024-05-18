@@ -9,19 +9,26 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
-        
-        NavigationView {
-                TabView {
-                    MyFinance()
-                        .tabItem { Label("My Finnance", systemImage: "house.circle") }
-                    CreateForm()
-                        .tabItem { Label("Create", systemImage: "plus.circle") }
-                    Details()
-                        .tabItem { Label("Details", systemImage: "checklist.checked") }
-                    Account()
-                        .tabItem { Label("Settings", systemImage: "gear") }
-                
-                }.tabViewStyle(.automatic)
+        NavigationStack {
+                VStack  {
+                    TabView {
+                        
+                        MyFinance()
+                            .tabItem { Label("My Finnance", systemImage: "house.circle") }
+                        CreateForm()
+                            .tabItem { Label("Create", systemImage: "plus.circle") }
+                        Details()
+                            .tabItem { Label("Details", systemImage: "checklist.checked") }
+                        Account()
+                            .tabItem { Label("Settings", systemImage: "gear") }
+                    }.tabViewStyle(.automatic)
+                        .background(.gray)
+                        .onAppear(){
+                            UITabBar.appearance().backgroundColor = .lightGray}
+                }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Rectangle().foregroundColor(Color.primaryColor1))
+                    .ignoresSafeArea()
+            
         }
     }
 }

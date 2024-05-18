@@ -105,38 +105,6 @@ struct Details: View {
                                 }.textFieldStyle(.roundedBorder)
                                     .padding(.top, -15)
                                     .padding()
-                                HStack {
-                                    TextField("", text: $date)
-                                    TextField("", text: $type)
-                                    TextField("", text: $category)
-                                    TextField("", text: ($amount))
-                                }.textFieldStyle(.roundedBorder)
-                                    .padding(.top, -15)
-                                    .padding()
-                                HStack {
-                                    TextField("", text: $date)
-                                    TextField("", text: $type)
-                                    TextField("", text: $category)
-                                    TextField("", text: ($amount))
-                                }.textFieldStyle(.roundedBorder)
-                                    .padding(.top, -15)
-                                    .padding()
-                                HStack {
-                                    TextField("", text: $date)
-                                    TextField("", text: $type)
-                                    TextField("", text: $category)
-                                    TextField("", text: ($amount))
-                                }.textFieldStyle(.roundedBorder)
-                                    .padding(.top, -15)
-                                    .padding()
-                                HStack {
-                                    TextField("", text: $date)
-                                    TextField("", text: $type)
-                                    TextField("", text: $category)
-                                    TextField("", text: ($amount))
-                                }.textFieldStyle(.roundedBorder)
-                                    .padding(.top, -15)
-                                    .padding()
                         }
                     }
                 }
