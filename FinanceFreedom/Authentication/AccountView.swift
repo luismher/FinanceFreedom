@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct Account: View {
+struct AccountView: View {
     @State private var firstName = ""
     @State private var toggle = false
 
     var body: some View {
         NavigationStack {
-            
+            ZStack{
+                Color(Color.primaryColor1)
+                    .ignoresSafeArea()
                 ScrollView {
                     VStack {
                         Text("Personal Information")
@@ -51,19 +53,24 @@ struct Account: View {
                     
                     Toggle("Offers", isOn: $toggle)
                         .padding()
+                        .toggleStyle(SwitchToggleStyle(tint: Color.blue))
                     Toggle("News Letters", isOn: $toggle)
                         .padding()
+                        .toggleStyle(SwitchToggleStyle(tint: Color.blue))
+                        
                     Toggle("Payment Reminder", isOn: $toggle)
                         .padding()
+                        .toggleStyle(SwitchToggleStyle(tint: Color.blue))
                     Button("Logout"){}
                         .buttonStyle(buttonGray())
                         .padding(.bottom)
                         .padding()
+                }
             }
         }
     }
 }
 
 #Preview {
-    Account()
+    AccountView()
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Onboarding: View {
+struct AuthenticationView: View {
     
     @State private var userName = ""
 
@@ -19,32 +19,33 @@ struct Onboarding: View {
                 VStack{
                     Logo()
                         .frame(maxWidth: .infinity, alignment: .top)
-                        .padding()
-                    Text("Email")
-                        .onboardingText()
+                        .padding(35)
                         .padding(.top)
-                    TextField("Username", text: $userName)
+                    
+                    TextField("Email", text: $userName)
                         .keyboardType(.emailAddress)
-                    Text("Password")
-                        .onboardingText()
+                        .padding(2)
                     TextField("Password", text: $userName)
+                        .padding(.top)
                         .padding(.bottom)
                     HStack {
                         
                         VStack{
                             Button("Forgot Password"){}
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.custom("Khula", size: 14))
+                                .font(.custom("Khula", size: 16))
+                                .padding(.bottom)
                             Button("Create Account"){}
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.custom("Khula", size: 14))
+                                .font(.custom("Khula", size: 16))
                                 .padding(.top, 10)
                         }
                         Button("Face Id", systemImage: "faceid"){}
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                            .font(.custom("Khula", size: 16))
+                            .font(.custom("Khula", size: 18))
                             
                     }
+                    .padding(.top)
                     Spacer()
                     Button("Login"){}
                         .buttonStyle(buttonGray())
@@ -62,5 +63,5 @@ struct Onboarding: View {
 }
 
 #Preview {
-    Onboarding()
+    AuthenticationView()
 }

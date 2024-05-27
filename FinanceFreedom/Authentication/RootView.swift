@@ -1,18 +1,18 @@
 //
-//  Models.swift
+//  RootView.swift
 //  FinanceFreedom
 //
-//  Created by Luismi on 4/22/24.
+//  Created by Luismi on 5/27/24.
 //
 
 import SwiftUI
 
-struct Models: View {
+struct RootView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    Models()
+    RootView()
 }
