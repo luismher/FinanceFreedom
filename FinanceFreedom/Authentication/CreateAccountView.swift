@@ -11,7 +11,23 @@ import SwiftUI
 final class CreateAccountViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
-    @Published var confirmPassword = ""
+    
+    func signIn() {
+        guard !email.isEmpty, !password.isEmpty else {
+            print("No email or password found! ")
+            return
+        }
+        
+        Task {
+            do {
+                let returnUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
+                print("success")
+                print(returnUserData)
+            } catch{
+                print("Error.. \(error)")
+            }
+        }
+    }
 }
 
 struct CreateAccountView: View {
@@ -27,9 +43,11 @@ struct CreateAccountView: View {
                         .padding(.top, 40 )
                     SecureField("Password", text: $viewModel.password )
                         .padding(.top)
-                    SecureField("Confirm Password", text: $viewModel.confirmPassword )
+                    SecureField("Confirm Password", text: $viewModel.password   )
                         .padding(.top)
-                    Button("Sign In"){}
+                    Button("Sign In"){
+                        viewModel.signIn()
+                    }
                         .buttonStyle(buttonGray())
                         .padding(.top, 40)
                     Spacer()
@@ -44,5 +62,5 @@ struct CreateAccountView: View {
     }
 }
 #Preview {
-    CreateAccount()
+    CreateAccountView()
 }

@@ -35,10 +35,13 @@ struct AuthenticationView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .font(.custom("Khula", size: 16))
                                 .padding(.bottom)
-                            Button("Create Account"){}
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.custom("Khula", size: 16))
-                                .padding(.top, 10)
+                            NavigationLink{ CreateAccountView() }label: {
+                                Text("Create Account")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.custom("Khula", size: 16))
+                                    .padding(.top, 10)
+                            }
+                            
                         }
                         Button("Face Id", systemImage: "faceid"){}
                             .frame(maxWidth: .infinity, alignment: .trailing)
@@ -63,5 +66,7 @@ struct AuthenticationView: View {
 }
 
 #Preview {
-    AuthenticationView()
+    NavigationStack {
+        AuthenticationView()
+    }
 }

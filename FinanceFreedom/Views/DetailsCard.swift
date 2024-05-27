@@ -25,7 +25,7 @@ struct DetailsCard: View {
                     VStack (alignment: .leading, spacing: 30) {
                         Button("Edit"){}
                             .frame(maxWidth: .infinity, alignment: .trailing)
-                            .padding(.top, 150)
+                            .padding(.top, 120)
                             .padding()
                         Text(type)
                             .frame(maxWidth: .infinity, alignment: .center)
@@ -57,7 +57,7 @@ struct DetailsCard: View {
                             .cornerRadius(8)
                             .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
                             .background(Color.gray.opacity(0.1))
-                            .frame(minHeight: 160)
+                            .frame(minHeight: 200)
                             .padding()
                             .padding(.bottom, 150)
                             .padding(.top, -20)

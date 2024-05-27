@@ -19,16 +19,16 @@ struct Home: View {
                             .tabItem { Label("Create", systemImage: "plus.circle") }
                         Details()
                             .tabItem { Label("Details", systemImage: "checklist.checked") }
-                        Account()
+                        AccountView(showSignInView: .constant(false))
                             .tabItem { Label("Settings", systemImage: "gear") }
                     }.tabViewStyle(.automatic)
                         .background(.gray)
                         .onAppear(){
-                            UITabBar.appearance().backgroundColor = .lightGray}
+                            UITabBar.appearance().backgroundColor = .darkGray
+                            UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()}
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Rectangle().foregroundColor(Color.primaryColor1))
                     .ignoresSafeArea()
-            
         }
     }
 }

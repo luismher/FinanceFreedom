@@ -169,7 +169,7 @@ struct buttonGray: ButtonStyle {
 }
 
 extension Color {
-    static let primaryColor1 = Color(#colorLiteral(red: 0.1448854208, green: 0.8348324895, blue: 0.2526641488, alpha: 1))
+    static let primaryColor1 = Color(#colorLiteral(red: 0, green: 0.7127789855, blue: 0, alpha: 1))
     static let primaryColor2 = Color(#colorLiteral(red: 0.3847852647, green: 0.3847852647, blue: 0.3847852647, alpha: 1))
     static let secondaryColor1 = Color(#colorLiteral(red: 0.8866234422, green: 0.03123403899, blue: 0, alpha: 1))
     static let secondaryColor2 = Color(#colorLiteral(red: 0.9301789403, green: 0.4312080145, blue: 0, alpha: 1))

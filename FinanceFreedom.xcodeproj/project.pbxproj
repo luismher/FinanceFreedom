@@ -7,44 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		702456E92BD6AF1C00422BEA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456E82BD6AF1C00422BEA /* Models.swift */; };
 		702456EE2BF2CEE200422BEA /* CreateForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456ED2BF2CEE200422BEA /* CreateForm.swift */; };
 		702456F02BF3B88A00422BEA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456EF2BF3B88A00422BEA /* Home.swift */; };
+		708846F62C04394600828CAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708846F52C04394600828CAB /* GoogleService-Info.plist */; };
+		708846FD2C043FEB00828CAB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 708846FC2C043FEB00828CAB /* FirebaseAnalytics */; };
+		708846FF2C043FEB00828CAB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 708846FE2C043FEB00828CAB /* FirebaseAnalyticsSwift */; };
+		708847022C04457900828CAB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 708847012C04457900828CAB /* FirebaseAuth */; };
+		708847052C044F4000828CAB /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708847042C044F4000828CAB /* CreateAccountView.swift */; };
+		708847072C04525B00828CAB /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708847062C04525B00828CAB /* AuthenticationManager.swift */; };
+		708847092C04F3DC00828CAB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708847082C04F3DC00828CAB /* RootView.swift */; };
 		709AF09B2BBED2E7003ABF60 /* FinanceFreedomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */; };
 		709AF09D2BBED2E7003ABF60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF09C2BBED2E7003ABF60 /* ContentView.swift */; };
 		709AF09F2BBED2E9003ABF60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709AF09E2BBED2E9003ABF60 /* Assets.xcassets */; };
 		709AF0A22BBED2E9003ABF60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709AF0A12BBED2E9003ABF60 /* Preview Assets.xcassets */; };
-		709AF0A42BBED2E9003ABF60 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0A32BBED2E9003ABF60 /* Persistence.swift */; };
-		709AF0A72BBED2E9003ABF60 /* FinanceFreedom.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0A52BBED2E9003ABF60 /* FinanceFreedom.xcdatamodeld */; };
-		709AF0AE2BC0238D003ABF60 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0AD2BC0238D003ABF60 /* Onboarding.swift */; };
+		709AF0AE2BC0238D003ABF60 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0AD2BC0238D003ABF60 /* AuthenticationView.swift */; };
 		709AF0B02BC023D0003ABF60 /* MyFinance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0AF2BC023D0003ABF60 /* MyFinance.swift */; };
 		709AF0B32BC02426003ABF60 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0B22BC02426003ABF60 /* Details.swift */; };
 		709AF0B52BC02486003ABF60 /* DetailsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0B42BC02486003ABF60 /* DetailsCard.swift */; };
-		709AF0B72BC0249C003ABF60 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0B62BC0249C003ABF60 /* Account.swift */; };
+		709AF0B72BC0249C003ABF60 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0B62BC0249C003ABF60 /* AccountView.swift */; };
 		709AF0B92BC027CB003ABF60 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0B82BC027CB003ABF60 /* Styles.swift */; };
 		709AF0BC2BC06DB8003ABF60 /* Finnance Freedom Logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 709AF0BB2BC06DB8003ABF60 /* Finnance Freedom Logo.jpeg */; };
 		709AF0BE2BC06DDC003ABF60 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF0BD2BC06DDC003ABF60 /* Logo.swift */; };
+		70E903C02BFE592200A6E246 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E903BF2BFE592200A6E246 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		702456E82BD6AF1C00422BEA /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		702456ED2BF2CEE200422BEA /* CreateForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateForm.swift; sourceTree = "<group>"; };
 		702456EF2BF3B88A00422BEA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		708846D82C04273D00828CAB /* FinanceFreedom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinanceFreedom.entitlements; sourceTree = "<group>"; };
+		708846F52C04394600828CAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		708847042C044F4000828CAB /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		708847062C04525B00828CAB /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		708847082C04F3DC00828CAB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		709AF0972BBED2E7003ABF60 /* FinanceFreedom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceFreedom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceFreedomApp.swift; sourceTree = "<group>"; };
 		709AF09C2BBED2E7003ABF60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		709AF09E2BBED2E9003ABF60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		709AF0A12BBED2E9003ABF60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		709AF0A32BBED2E9003ABF60 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		709AF0A62BBED2E9003ABF60 /* FinanceFreedom.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceFreedom.xcdatamodel; sourceTree = "<group>"; };
-		709AF0AD2BC0238D003ABF60 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		709AF0AD2BC0238D003ABF60 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		709AF0AF2BC023D0003ABF60 /* MyFinance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFinance.swift; sourceTree = "<group>"; };
 		709AF0B22BC02426003ABF60 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		709AF0B42BC02486003ABF60 /* DetailsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCard.swift; sourceTree = "<group>"; };
-		709AF0B62BC0249C003ABF60 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		709AF0B62BC0249C003ABF60 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		709AF0B82BC027CB003ABF60 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		709AF0BB2BC06DB8003ABF60 /* Finnance Freedom Logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Finnance Freedom Logo.jpeg"; sourceTree = "<group>"; };
 		709AF0BD2BC06DDC003ABF60 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		70E903BF2BFE592200A6E246 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708846FF2C043FEB00828CAB /* FirebaseAnalyticsSwift in Frameworks */,
+				708847022C04457900828CAB /* FirebaseAuth in Frameworks */,
+				708846FD2C043FEB00828CAB /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +72,28 @@
 		702456EA2BD6AF3400422BEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				702456E82BD6AF1C00422BEA /* Models.swift */,
+				70E903BF2BFE592200A6E246 /* ViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		708847002C04457900828CAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		708847032C04469400828CAB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				708847082C04F3DC00828CAB /* RootView.swift */,
+				709AF0AD2BC0238D003ABF60 /* AuthenticationView.swift */,
+				708847042C044F4000828CAB /* CreateAccountView.swift */,
+				709AF0B62BC0249C003ABF60 /* AccountView.swift */,
+				708847062C04525B00828CAB /* AuthenticationManager.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		709AF08E2BBED2E7003ABF60 = {
@@ -71,6 +101,7 @@
 			children = (
 				709AF0992BBED2E7003ABF60 /* FinanceFreedom */,
 				709AF0982BBED2E7003ABF60 /* Products */,
+				708847002C04457900828CAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,15 +116,16 @@
 		709AF0992BBED2E7003ABF60 /* FinanceFreedom */ = {
 			isa = PBXGroup;
 			children = (
+				708846D82C04273D00828CAB /* FinanceFreedom.entitlements */,
 				709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */,
 				709AF0B82BC027CB003ABF60 /* Styles.swift */,
+				708847032C04469400828CAB /* Authentication */,
 				702456EA2BD6AF3400422BEA /* Models */,
 				709AF0B12BC023FC003ABF60 /* Views */,
 				709AF09C2BBED2E7003ABF60 /* ContentView.swift */,
+				708846F52C04394600828CAB /* GoogleService-Info.plist */,
 				709AF0BB2BC06DB8003ABF60 /* Finnance Freedom Logo.jpeg */,
 				709AF09E2BBED2E9003ABF60 /* Assets.xcassets */,
-				709AF0A32BBED2E9003ABF60 /* Persistence.swift */,
-				709AF0A52BBED2E9003ABF60 /* FinanceFreedom.xcdatamodeld */,
 				709AF0A02BBED2E9003ABF60 /* Preview Content */,
 			);
 			path = FinanceFreedom;
@@ -110,13 +142,11 @@
 		709AF0B12BC023FC003ABF60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				709AF0AD2BC0238D003ABF60 /* Onboarding.swift */,
 				709AF0AF2BC023D0003ABF60 /* MyFinance.swift */,
 				702456EF2BF3B88A00422BEA /* Home.swift */,
 				709AF0B22BC02426003ABF60 /* Details.swift */,
 				709AF0B42BC02486003ABF60 /* DetailsCard.swift */,
 				709AF0BD2BC06DDC003ABF60 /* Logo.swift */,
-				709AF0B62BC0249C003ABF60 /* Account.swift */,
 				702456ED2BF2CEE200422BEA /* CreateForm.swift */,
 			);
 			path = Views;
@@ -138,6 +168,11 @@
 			dependencies = (
 			);
 			name = FinanceFreedom;
+			packageProductDependencies = (
+				708846FC2C043FEB00828CAB /* FirebaseAnalytics */,
+				708846FE2C043FEB00828CAB /* FirebaseAnalyticsSwift */,
+				708847012C04457900828CAB /* FirebaseAuth */,
+			);
 			productName = FinanceFreedom;
 			productReference = 709AF0972BBED2E7003ABF60 /* FinanceFreedom.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +201,9 @@
 				Base,
 			);
 			mainGroup = 709AF08E2BBED2E7003ABF60;
+			packageReferences = (
+				708846F72C043ACD00828CAB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 709AF0982BBED2E7003ABF60 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				709AF0A22BBED2E9003ABF60 /* Preview Assets.xcassets in Resources */,
+				708846F62C04394600828CAB /* GoogleService-Info.plist in Resources */,
 				709AF0BC2BC06DB8003ABF60 /* Finnance Freedom Logo.jpeg in Resources */,
 				709AF09F2BBED2E9003ABF60 /* Assets.xcassets in Resources */,
 			);
@@ -193,20 +232,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709AF0A42BBED2E9003ABF60 /* Persistence.swift in Sources */,
 				709AF0B92BC027CB003ABF60 /* Styles.swift in Sources */,
 				702456EE2BF2CEE200422BEA /* CreateForm.swift in Sources */,
-				709AF0A72BBED2E9003ABF60 /* FinanceFreedom.xcdatamodeld in Sources */,
-				702456E92BD6AF1C00422BEA /* Models.swift in Sources */,
 				709AF0B02BC023D0003ABF60 /* MyFinance.swift in Sources */,
 				702456F02BF3B88A00422BEA /* Home.swift in Sources */,
+				70E903C02BFE592200A6E246 /* ViewModel.swift in Sources */,
 				709AF0BE2BC06DDC003ABF60 /* Logo.swift in Sources */,
-				709AF0AE2BC0238D003ABF60 /* Onboarding.swift in Sources */,
+				709AF0AE2BC0238D003ABF60 /* AuthenticationView.swift in Sources */,
+				708847052C044F4000828CAB /* CreateAccountView.swift in Sources */,
 				709AF0B52BC02486003ABF60 /* DetailsCard.swift in Sources */,
-				709AF0B72BC0249C003ABF60 /* Account.swift in Sources */,
+				708847072C04525B00828CAB /* AuthenticationManager.swift in Sources */,
+				709AF0B72BC0249C003ABF60 /* AccountView.swift in Sources */,
 				709AF09D2BBED2E7003ABF60 /* ContentView.swift in Sources */,
 				709AF09B2BBED2E7003ABF60 /* FinanceFreedomApp.swift in Sources */,
 				709AF0B32BC02426003ABF60 /* Details.swift in Sources */,
+				708847092C04F3DC00828CAB /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,10 +377,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = FinanceFreedom/FinanceFreedom.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FinanceFreedom/Preview Content\"";
-				DEVELOPMENT_TEAM = 34HZ7Z8453;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -353,8 +395,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Smartprojects.FinanceFreedom;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SP.FinnanceFreedom2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,6 +409,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FinanceFreedom/FinanceFreedom.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FinanceFreedom/Preview Content\"";
@@ -382,8 +427,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Smartprojects.FinanceFreedom;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smartprojects.financefreedom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,18 +459,34 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		709AF0A52BBED2E9003ABF60 /* FinanceFreedom.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				709AF0A62BBED2E9003ABF60 /* FinanceFreedom.xcdatamodel */,
-			);
-			currentVersion = 709AF0A62BBED2E9003ABF60 /* FinanceFreedom.xcdatamodel */;
-			path = FinanceFreedom.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		708846F72C043ACD00828CAB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.26.0;
+			};
 		};
-/* End XCVersionGroup section */
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		708846FC2C043FEB00828CAB /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 708846F72C043ACD00828CAB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		708846FE2C043FEB00828CAB /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 708846F72C043ACD00828CAB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		708847012C04457900828CAB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 708846F72C043ACD00828CAB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 709AF08F2BBED2E7003ABF60 /* Project object */;
 }

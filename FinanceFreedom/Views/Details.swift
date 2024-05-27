@@ -27,7 +27,7 @@ struct Details: View {
                         .padding(.top, -50)
                         .padding()
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .foregroundColor(.black)
+                        .foregroundColor(.blue)
                     HStack {
                             Text("Date")
                             .padding()

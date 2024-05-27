@@ -7,10 +7,21 @@
 
 import SwiftUI
 
+@MainActor
+
+final class AccountViewModel: ObservableObject {
+    
+    func signOut() throws {
+        try AuthenticationManager.shared.signOut()
+    }
+    
+}
+
 struct AccountView: View {
     @State private var firstName = ""
     @State private var toggle = false
-
+    @StateObject private var viewModel = AccountViewModel()
+    @Binding var showSignInView: Bool
     var body: some View {
         NavigationStack {
             ZStack{
@@ -61,7 +72,16 @@ struct AccountView: View {
                     Toggle("Payment Reminder", isOn: $toggle)
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: Color.blue))
-                    Button("Logout"){}
+                    Button("Logout"){
+                        Task {
+                            do {
+                                try viewModel.signOut()
+                                showSignInView = true
+                            } catch {
+                                 print(error)
+                            }
+                        }
+                    }
                         .buttonStyle(buttonGray())
                         .padding(.bottom)
                         .padding()
@@ -72,5 +92,7 @@ struct AccountView: View {
 }
 
 #Preview {
-    AccountView()
+    NavigationStack {
+        AccountView(showSignInView: .constant(false ))
+    }
 }

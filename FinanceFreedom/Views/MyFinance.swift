@@ -13,6 +13,9 @@ struct MyFinance: View {
     var body: some View {
         
         NavigationStack{
+            ZStack{
+                Color(Color.primaryColor1)
+                    .ignoresSafeArea()
                     VStack{
                         Logo()
                             .frame(maxWidth: .infinity, alignment: .top)
@@ -114,9 +117,9 @@ struct MyFinance: View {
                             .shadow (radius: 15)
                             .padding()
                             Spacer()
-
-                }
                     }
+                }
+            }
         }
     }
 }
