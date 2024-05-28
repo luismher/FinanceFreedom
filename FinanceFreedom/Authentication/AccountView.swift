@@ -18,10 +18,13 @@ final class AccountViewModel: ObservableObject {
 }
 
 struct AccountView: View {
+    
     @State private var firstName = ""
     @State private var toggle = false
     @StateObject private var viewModel = AccountViewModel()
-    @Binding var showSignInView: Bool
+    @Binding var showCreateAccountView: Bool
+    
+    
     var body: some View {
         NavigationStack {
             ZStack{
@@ -42,6 +45,7 @@ struct AccountView: View {
                             .padding(.trailing)
                         Button("Save"){}
                             .padding()
+                        
                     }.frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     VStack{
@@ -76,7 +80,7 @@ struct AccountView: View {
                         Task {
                             do {
                                 try viewModel.signOut()
-                                showSignInView = true
+                                showCreateAccountView = true
                             } catch {
                                  print(error)
                             }
@@ -87,12 +91,17 @@ struct AccountView: View {
                         .padding()
                 }
             }
-        }
+        }.toolbar(content: {
+            NavigationLink { AccountSettingsView()
+            } label: {
+                Text("Settings")
+            }
+        })
     }
 }
 
 #Preview {
     NavigationStack {
-        AccountView(showSignInView: .constant(false ))
+        AccountView(showCreateAccountView: .constant(false ))
     }
 }

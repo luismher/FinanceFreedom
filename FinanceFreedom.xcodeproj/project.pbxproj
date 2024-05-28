@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		702456EE2BF2CEE200422BEA /* CreateForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456ED2BF2CEE200422BEA /* CreateForm.swift */; };
 		702456F02BF3B88A00422BEA /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702456EF2BF3B88A00422BEA /* Home.swift */; };
+		708636CE2C056FC400336FD1 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708636CD2C056FC400336FD1 /* AccountSettingsView.swift */; };
 		708846F62C04394600828CAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708846F52C04394600828CAB /* GoogleService-Info.plist */; };
 		708846FD2C043FEB00828CAB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 708846FC2C043FEB00828CAB /* FirebaseAnalytics */; };
 		708846FF2C043FEB00828CAB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 708846FE2C043FEB00828CAB /* FirebaseAnalyticsSwift */; };
 		708847022C04457900828CAB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 708847012C04457900828CAB /* FirebaseAuth */; };
 		708847052C044F4000828CAB /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708847042C044F4000828CAB /* CreateAccountView.swift */; };
 		708847072C04525B00828CAB /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708847062C04525B00828CAB /* AuthenticationManager.swift */; };
-		708847092C04F3DC00828CAB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708847082C04F3DC00828CAB /* RootView.swift */; };
+		7088470F2C05469000828CAB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7088470E2C05469000828CAB /* RootView.swift */; };
+		708847132C05481900828CAB /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708847122C05481900828CAB /* ResetPasswordView.swift */; };
 		709AF09B2BBED2E7003ABF60 /* FinanceFreedomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */; };
 		709AF09D2BBED2E7003ABF60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AF09C2BBED2E7003ABF60 /* ContentView.swift */; };
 		709AF09F2BBED2E9003ABF60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 709AF09E2BBED2E9003ABF60 /* Assets.xcassets */; };
@@ -34,11 +36,13 @@
 /* Begin PBXFileReference section */
 		702456ED2BF2CEE200422BEA /* CreateForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateForm.swift; sourceTree = "<group>"; };
 		702456EF2BF3B88A00422BEA /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		708636CD2C056FC400336FD1 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		708846D82C04273D00828CAB /* FinanceFreedom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinanceFreedom.entitlements; sourceTree = "<group>"; };
 		708846F52C04394600828CAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		708847042C044F4000828CAB /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		708847062C04525B00828CAB /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
-		708847082C04F3DC00828CAB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7088470E2C05469000828CAB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		708847122C05481900828CAB /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		709AF0972BBED2E7003ABF60 /* FinanceFreedom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceFreedom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		709AF09A2BBED2E7003ABF60 /* FinanceFreedomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceFreedomApp.swift; sourceTree = "<group>"; };
 		709AF09C2BBED2E7003ABF60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,10 +91,12 @@
 		708847032C04469400828CAB /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				708847082C04F3DC00828CAB /* RootView.swift */,
+				7088470E2C05469000828CAB /* RootView.swift */,
 				709AF0AD2BC0238D003ABF60 /* AuthenticationView.swift */,
+				708847122C05481900828CAB /* ResetPasswordView.swift */,
 				708847042C044F4000828CAB /* CreateAccountView.swift */,
 				709AF0B62BC0249C003ABF60 /* AccountView.swift */,
+				708636CD2C056FC400336FD1 /* AccountSettingsView.swift */,
 				708847062C04525B00828CAB /* AuthenticationManager.swift */,
 			);
 			path = Authentication;
@@ -235,9 +241,11 @@
 				709AF0B92BC027CB003ABF60 /* Styles.swift in Sources */,
 				702456EE2BF2CEE200422BEA /* CreateForm.swift in Sources */,
 				709AF0B02BC023D0003ABF60 /* MyFinance.swift in Sources */,
+				708847132C05481900828CAB /* ResetPasswordView.swift in Sources */,
 				702456F02BF3B88A00422BEA /* Home.swift in Sources */,
 				70E903C02BFE592200A6E246 /* ViewModel.swift in Sources */,
 				709AF0BE2BC06DDC003ABF60 /* Logo.swift in Sources */,
+				708636CE2C056FC400336FD1 /* AccountSettingsView.swift in Sources */,
 				709AF0AE2BC0238D003ABF60 /* AuthenticationView.swift in Sources */,
 				708847052C044F4000828CAB /* CreateAccountView.swift in Sources */,
 				709AF0B52BC02486003ABF60 /* DetailsCard.swift in Sources */,
@@ -246,7 +254,7 @@
 				709AF09D2BBED2E7003ABF60 /* ContentView.swift in Sources */,
 				709AF09B2BBED2E7003ABF60 /* FinanceFreedomApp.swift in Sources */,
 				709AF0B32BC02426003ABF60 /* Details.swift in Sources */,
-				708847092C04F3DC00828CAB /* RootView.swift in Sources */,
+				7088470F2C05469000828CAB /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

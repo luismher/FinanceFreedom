@@ -7,9 +7,28 @@
 
 import SwiftUI
 
+@MainActor
+final class AuthenticationViewModel: ObservableObject {
+    @Published var email = ""
+    @Published var password = ""
+    
+    func signIn() async throws {
+        guard !email.isEmpty, !password.isEmpty else {
+            print("No email or password found! ")
+            return
+        }
+        try await AuthenticationManager.shared.signIn(email: email, password: password)
+    }
+}
+
+
 struct AuthenticationView: View {
     
+    
+    @StateObject private var viewModel = AuthenticationViewModel()
     @State private var userName = ""
+    @Binding var showCreateAccountView: Bool
+    @Binding var showResetPasswordView: Bool
 
     var body: some View {
             NavigationStack{
@@ -22,26 +41,28 @@ struct AuthenticationView: View {
                         .padding(35)
                         .padding(.top)
                     
-                    TextField("Email", text: $userName)
+                    TextField("Email", text: $viewModel.email)
                         .keyboardType(.emailAddress)
                         .padding(2)
-                    TextField("Password", text: $userName)
+                    SecureField("Password", text: $viewModel.password)
                         .padding(.top)
                         .padding(.bottom)
                     HStack {
                         
                         VStack{
-                            Button("Forgot Password"){}
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.custom("Khula", size: 16))
-                                .padding(.bottom)
-                            NavigationLink{ CreateAccountView() }label: {
+                            NavigationLink{ ResetPasswordView(showResetPasswordView: $showResetPasswordView) } label: {
+                                Text("Forgot Password")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .font(.custom("Khula", size: 16))
+                                    .padding(.bottom)
+                            }
+                            
+                            NavigationLink{ CreateAccountView(showCreateAccountView: $showCreateAccountView ) }label: {
                                 Text("Create Account")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .font(.custom("Khula", size: 16))
                                     .padding(.top, 10)
                             }
-                            
                         }
                         Button("Face Id", systemImage: "faceid"){}
                             .frame(maxWidth: .infinity, alignment: .trailing)
@@ -50,7 +71,16 @@ struct AuthenticationView: View {
                     }
                     .padding(.top)
                     Spacer()
-                    Button("Login"){}
+                    Button("Login"){
+                        Task {
+                            do {
+                                try await viewModel.signIn()
+                                showCreateAccountView = false
+                            } catch{
+                                print("Error.. \(error)")
+                            }
+                        }
+                    }
                         .buttonStyle(buttonGray())
                         .padding(.bottom)
                     
@@ -67,6 +97,8 @@ struct AuthenticationView: View {
 
 #Preview {
     NavigationStack {
-        AuthenticationView()
+        AuthenticationView(showCreateAccountView: .constant(false), showResetPasswordView: .constant(false))
+        
+        
     }
 }

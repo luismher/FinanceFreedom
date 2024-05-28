@@ -9,7 +9,21 @@ import SwiftUI
 
 struct AccountSettingsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+                VStack{
+                    List {
+                        Button ("Change Email"){
+                            
+                        }
+                        Button("Change Password"){
+                            
+                        }
+                        Button("Delete Account"){
+                            
+                        }
+                    }
+                }.navigationTitle("Account Settings")
+        }
     }
 }
 

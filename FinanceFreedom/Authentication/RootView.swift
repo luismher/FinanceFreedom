@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct RootView: View {
+    
+    @State private var showCreateAccountView: Bool = false
+    @State private var showResetPasswordView: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            NavigationStack {
+                AccountView(showCreateAccountView: $showCreateAccountView)
+            }
+        }.onAppear{
+            let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
+            self.showCreateAccountView  = authUser == nil
+            
+        }.fullScreenCover(isPresented: $showCreateAccountView){
+            NavigationStack {
+                AuthenticationView(showCreateAccountView: $showCreateAccountView, showResetPasswordView: $showResetPasswordView)
+            }
+        }
     }
 }
 

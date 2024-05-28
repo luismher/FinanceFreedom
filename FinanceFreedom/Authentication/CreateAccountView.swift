@@ -12,27 +12,20 @@ final class CreateAccountViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     
-    func signIn() {
+    func signUp() async throws {
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or password found! ")
             return
         }
-        
-        Task {
-            do {
-                let returnUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-                print("success")
-                print(returnUserData)
-            } catch{
-                print("Error.. \(error)")
-            }
-        }
+        try await AuthenticationManager.shared.createUser(email: email, password: password)
     }
 }
 
 struct CreateAccountView: View {
     
     @StateObject private var viewModel = CreateAccountViewModel()
+    @Binding var showCreateAccountView: Bool
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -45,8 +38,15 @@ struct CreateAccountView: View {
                         .padding(.top)
                     SecureField("Confirm Password", text: $viewModel.password   )
                         .padding(.top)
-                    Button("Sign In"){
-                        viewModel.signIn()
+                    Button("Sign Up"){
+                        Task {
+                            do {
+                                try await viewModel.signUp()
+                                showCreateAccountView = false
+                            } catch{
+                                print("Error.. \(error)")
+                            }
+                        }
                     }
                         .buttonStyle(buttonGray())
                         .padding(.top, 40)
@@ -62,5 +62,7 @@ struct CreateAccountView: View {
     }
 }
 #Preview {
-    CreateAccountView()
+    NavigationStack {
+        CreateAccountView(showCreateAccountView: .constant(false))
+    }
 }
