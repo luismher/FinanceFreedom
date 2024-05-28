@@ -168,11 +168,35 @@ struct buttonGray: ButtonStyle {
     }
 }
 
+struct buttonBlue: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(configuration.isPressed ? Color.black : Color.white)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(configuration.isPressed ? Color.secondaryColor2 : Color.blue)
+            .cornerRadius(8)
+            .padding(.horizontal)
+    }
+}
+
+struct buttonRed: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(configuration.isPressed ? Color.black : Color.white)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(configuration.isPressed ? Color.secondaryColor2 : Color.secondaryColor1)
+            .cornerRadius(8)
+            .padding(.horizontal)
+    }
+}
+
 extension Color {
     static let primaryColor1 = Color(#colorLiteral(red: 0, green: 0.7127789855, blue: 0, alpha: 1))
     static let primaryColor2 = Color(#colorLiteral(red: 0.3847852647, green: 0.3847852647, blue: 0.3847852647, alpha: 1))
     static let secondaryColor1 = Color(#colorLiteral(red: 0.8866234422, green: 0.03123403899, blue: 0, alpha: 1))
-    static let secondaryColor2 = Color(#colorLiteral(red: 0.9301789403, green: 0.4312080145, blue: 0, alpha: 1))
+    static let secondaryColor2 = Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
     static let secondaryColor3 = Color(#colorLiteral(red: 0.9409594536, green: 0.9528051019, blue: 0.9525968432, alpha: 1))
     static let secondaryColor4 = Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
 }

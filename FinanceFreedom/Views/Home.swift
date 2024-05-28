@@ -19,7 +19,7 @@ struct Home: View {
                             .tabItem { Label("Create", systemImage: "plus.circle") }
                         Details()
                             .tabItem { Label("Details", systemImage: "checklist.checked") }
-                        AccountView(showCreateAccountView: .constant(false))
+                        AccountView(showCreateAccountView: .constant(false), showUpdatePassword: .constant(false))
                             .tabItem { Label("Settings", systemImage: "gear") }
                     }.tabViewStyle(.automatic)
                         .background(.gray)

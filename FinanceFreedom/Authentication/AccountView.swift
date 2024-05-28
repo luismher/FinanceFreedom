@@ -23,6 +23,7 @@ struct AccountView: View {
     @State private var toggle = false
     @StateObject private var viewModel = AccountViewModel()
     @Binding var showCreateAccountView: Bool
+    @Binding var showUpdatePassword: Bool
     
     
     var body: some View {
@@ -92,7 +93,7 @@ struct AccountView: View {
                 }
             }
         }.toolbar(content: {
-            NavigationLink { AccountSettingsView()
+            NavigationLink { AccountSettingsView(showUpdatePassword: $showUpdatePassword )
             } label: {
                 Text("Settings")
             }
@@ -102,6 +103,6 @@ struct AccountView: View {
 
 #Preview {
     NavigationStack {
-        AccountView(showCreateAccountView: .constant(false ))
+        AccountView(showCreateAccountView: .constant(false ), showUpdatePassword: .constant(false))
     }
 }
