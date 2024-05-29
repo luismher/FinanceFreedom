@@ -24,11 +24,12 @@ final class AuthenticationViewModel: ObservableObject {
 
 struct AuthenticationView: View {
     
-    
     @StateObject private var viewModel = AuthenticationViewModel()
     @State private var userName = ""
     @Binding var showCreateAccountView: Bool
     @Binding var showResetPasswordView: Bool
+    @Binding var showAuthenticationView: Bool 
+    @Binding var showAccountView: Bool
 
     var body: some View {
             NavigationStack{
@@ -75,7 +76,7 @@ struct AuthenticationView: View {
                         Task {
                             do {
                                 try await viewModel.signIn()
-                                showCreateAccountView = false
+                                showAuthenticationView = false
                             } catch{
                                 print("Error.. \(error)")
                             }
@@ -97,7 +98,7 @@ struct AuthenticationView: View {
 
 #Preview {
     NavigationStack {
-        AuthenticationView(showCreateAccountView: .constant(false), showResetPasswordView: .constant(false))
+        AuthenticationView(showCreateAccountView: .constant(false), showResetPasswordView: .constant(false), showAuthenticationView: .constant(false), showAccountView: .constant(false))
         
         
     }

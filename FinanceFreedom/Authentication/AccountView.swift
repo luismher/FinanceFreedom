@@ -24,7 +24,8 @@ struct AccountView: View {
     @StateObject private var viewModel = AccountViewModel()
     @Binding var showCreateAccountView: Bool
     @Binding var showUpdatePassword: Bool
-    
+    @Binding var showAuthenticationView: Bool
+    @Binding var showAccountView: Bool
     
     var body: some View {
         NavigationStack {
@@ -81,7 +82,7 @@ struct AccountView: View {
                         Task {
                             do {
                                 try viewModel.signOut()
-                                showCreateAccountView = true
+                                showAuthenticationView  = true
                             } catch {
                                  print(error)
                             }
@@ -103,6 +104,6 @@ struct AccountView: View {
 
 #Preview {
     NavigationStack {
-        AccountView(showCreateAccountView: .constant(false ), showUpdatePassword: .constant(false))
+        AccountView(showCreateAccountView: .constant(false), showUpdatePassword: .constant(false ), showAuthenticationView: .constant(false), showAccountView: .constant(false))
     }
 }
