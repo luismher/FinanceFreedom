@@ -16,13 +16,15 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
-            NavigationStack {
-                AccountView(showCreateAccountView: $showCreateAccountView, showUpdatePassword: $showUpdatePassword, showAuthenticationView: $showAuthenticationView, showAccountView: .constant(false))
-            }
+                NavigationStack {
+                    AccountView(showCreateAccountView: $showCreateAccountView, showUpdatePassword: $showUpdatePassword, showAuthenticationView: $showAuthenticationView, showAccountView: .constant(false))
+                }
+            
+            
         }.onAppear{
             let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
-            self.showAuthenticationView   = authUser == nil
-            
+            self.showAuthenticationView = authUser == nil 
+
         }.fullScreenCover(isPresented: $showAuthenticationView){
             NavigationStack {
                 AuthenticationView(showCreateAccountView: $showCreateAccountView, showResetPasswordView: $showResetPasswordView, showAuthenticationView: $showAuthenticationView, showAccountView: .constant(false))

@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
+import AuthenticationServices
+
+
 
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
@@ -13,13 +18,20 @@ final class AuthenticationViewModel: ObservableObject {
     @Published var password = ""
     
     func signIn() async throws {
-        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found! ")
-            return
-        }
+//        guard !email.isEmpty, !password.isEmpty else {
+  //          print("No email or password found! ")
+    //        return
+      //  }
         try await AuthenticationManager.shared.signIn(email: email, password: password)
     }
+    
+    func signInGoogle() async throws {
+        let method = GoogleSignInMethod()
+        let tokens = try await  method.signIn()
+        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
+    }
 }
+
 
 
 struct AuthenticationView: View {
@@ -33,64 +45,90 @@ struct AuthenticationView: View {
 
     var body: some View {
             NavigationStack{
-            ZStack{
-                Color(Color.primaryColor1)
-                    .ignoresSafeArea()
-                VStack{
-                    Logo()
-                        .frame(maxWidth: .infinity, alignment: .top)
-                        .padding(35)
-                        .padding(.top)
-                    
-                    TextField("Email", text: $viewModel.email)
-                        .keyboardType(.emailAddress)
-                        .padding(2)
-                    SecureField("Password", text: $viewModel.password)
+                ZStack{
+                    Color(Color.primaryColor1)
+                        .ignoresSafeArea()
+                    VStack{
+                        Logo()
+                            .frame(maxWidth: .infinity, alignment: .top)
+                            .padding(35)
+                            .padding(.top)
+                        
+                        TextField("Email", text: $viewModel.email)
+                            .keyboardType(.emailAddress)
+                            .padding(2)
+                        SecureField("Password", text: $viewModel.password)
+                            .padding(.top)
+                            .padding(.bottom)
+                        HStack {
+                            
+                            VStack{
+                                NavigationLink{ ResetPasswordView(showResetPasswordView: $showResetPasswordView) } label: {
+                                    Text("Forgot Password")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .font(.custom("Khula", size: 16))
+                                        .padding(.bottom)
+                                }
+                                
+                                NavigationLink{ CreateAccountView(showCreateAccountView: $showCreateAccountView ) }label: {
+                                    Text("Create Account")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .font(.custom("Khula", size: 16))
+                                        .padding(.top, 10)
+                                }
+                            }
+                            Button("Face Id", systemImage: "faceid"){}
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                                .font(.custom("Khula", size: 18))
+                            
+                        }
                         .padding(.top)
                         .padding(.bottom)
-                    HStack {
-                        
-                        VStack{
-                            NavigationLink{ ResetPasswordView(showResetPasswordView: $showResetPasswordView) } label: {
-                                Text("Forgot Password")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .font(.custom("Khula", size: 16))
-                                    .padding(.bottom)
-                            }
-                            
-                            NavigationLink{ CreateAccountView(showCreateAccountView: $showCreateAccountView ) }label: {
-                                Text("Create Account")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .font(.custom("Khula", size: 16))
-                                    .padding(.top, 10)
+                        Button("Login"){
+                            Task {
+                                do {
+                                    try await viewModel.signIn()
+                                    showAuthenticationView = false
+                                } catch{
+                                    print("Error.. \(error)")
+                                }
                             }
                         }
-                        Button("Face Id", systemImage: "faceid"){}
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .font(.custom("Khula", size: 18))
-                            
-                    }
-                    .padding(.top)
-                    Spacer()
-                    Button("Login"){
-                        Task {
-                            do {
-                                try await viewModel.signIn()
-                                showAuthenticationView = false
-                            } catch{
-                                print("Error.. \(error)")
-                            }
-                        }
-                    }
                         .buttonStyle(buttonGray())
                         .padding(.bottom)
-                    
-                    
-                    
-                }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                    .textFieldStyle(.roundedBorder)
-                    .disableAutocorrection(true)
-                    .padding()
+                        .padding(.top )
+                        Spacer()
+                        Text("--Or Sign in with--")
+                        Spacer()
+                        GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .light, style: .wide, state: .pressed)) {
+                            Task {
+                                do{
+                                    try await viewModel.signInGoogle()
+                                    showAuthenticationView = false
+                                } catch {
+                                    print(Error.self)
+                                }
+                                
+                            }
+                        }
+                        .cornerRadius(8)
+                        .padding()
+                        .padding(.horizontal, 50)
+                        
+                        SignInWithAppleButton { request in
+                            
+                        } onCompletion: { result in
+                            
+                        }
+                        .frame(height: 45)
+                        .padding(.horizontal, 65)
+                        Spacer()
+                        
+                    }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        .textFieldStyle(.roundedBorder)
+                        .disableAutocorrection(true)
+                        .padding()
+                
             }
         }
     }
