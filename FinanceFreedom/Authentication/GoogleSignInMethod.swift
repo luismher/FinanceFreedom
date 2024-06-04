@@ -29,7 +29,7 @@ final class GoogleSignInMethod {
         }
         let accessToken: String = gidSignInResult.user.accessToken.tokenString
         let name = gidSignInResult.user.profile?.name
-        let email = gidSignInResult.user.profile?.email
+        let email = gidSignInResult.user.profile?.email 
         
         let tokens = GoogleSignInResultModel(idToken: idToken, accesToken: accessToken, name: name, email: email)
         return tokens

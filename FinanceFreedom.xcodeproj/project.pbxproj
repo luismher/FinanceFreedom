@@ -15,6 +15,7 @@
 		7029B5592C06D08C0032208C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7029B5582C06D08C0032208C /* GoogleService-Info.plist */; };
 		7029B55B2C07B9630032208C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029B55A2C07B9630032208C /* Utilities.swift */; };
 		7029B55D2C07C7B30032208C /* GoogleSignInMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029B55C2C07C7B30032208C /* GoogleSignInMethod.swift */; };
+		7029B55F2C0A5A7A0032208C /* AppleSignInMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029B55E2C0A5A7A0032208C /* AppleSignInMethod.swift */; };
 		708636CE2C056FC400336FD1 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708636CD2C056FC400336FD1 /* AccountSettingsView.swift */; };
 		708846FD2C043FEB00828CAB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 708846FC2C043FEB00828CAB /* FirebaseAnalytics */; };
 		708846FF2C043FEB00828CAB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 708846FE2C043FEB00828CAB /* FirebaseAnalyticsSwift */; };
@@ -44,6 +45,7 @@
 		7029B5582C06D08C0032208C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7029B55A2C07B9630032208C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		7029B55C2C07C7B30032208C /* GoogleSignInMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInMethod.swift; sourceTree = "<group>"; };
+		7029B55E2C0A5A7A0032208C /* AppleSignInMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInMethod.swift; sourceTree = "<group>"; };
 		708636CD2C056FC400336FD1 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		708846D82C04273D00828CAB /* FinanceFreedom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinanceFreedom.entitlements; sourceTree = "<group>"; };
 		708847042C044F4000828CAB /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				708847042C044F4000828CAB /* CreateAccountView.swift */,
 				7029B55C2C07C7B30032208C /* GoogleSignInMethod.swift */,
 				709AF0B62BC0249C003ABF60 /* AccountView.swift */,
+				7029B55E2C0A5A7A0032208C /* AppleSignInMethod.swift */,
 				708636CD2C056FC400336FD1 /* AccountSettingsView.swift */,
 				708847062C04525B00828CAB /* AuthenticationManager.swift */,
 			);
@@ -266,6 +269,7 @@
 				708847052C044F4000828CAB /* CreateAccountView.swift in Sources */,
 				709AF0B52BC02486003ABF60 /* DetailsCard.swift in Sources */,
 				708847072C04525B00828CAB /* AuthenticationManager.swift in Sources */,
+				7029B55F2C0A5A7A0032208C /* AppleSignInMethod.swift in Sources */,
 				709AF0B72BC0249C003ABF60 /* AccountView.swift in Sources */,
 				709AF09D2BBED2E7003ABF60 /* ContentView.swift in Sources */,
 				709AF09B2BBED2E7003ABF60 /* FinanceFreedomApp.swift in Sources */,

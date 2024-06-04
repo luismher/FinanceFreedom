@@ -9,29 +9,39 @@ import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
 import AuthenticationServices
+import CryptoKit
 
 
 
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
+    
+    private var currentNonce: String?
     @Published var email = ""
     @Published var password = ""
+    let signInAppleMethod = SignInAppleMethod()
     
     func signIn() async throws {
-//        guard !email.isEmpty, !password.isEmpty else {
-  //          print("No email or password found! ")
-    //        return
-      //  }
+/*        guard !email.isEmpty, !password.isEmpty else {
+            print("No email or password found! ")
+            return
+        }
+    */
         try await AuthenticationManager.shared.signIn(email: email, password: password)
     }
     
     func signInGoogle() async throws {
         let method = GoogleSignInMethod()
         let tokens = try await  method.signIn()
-        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
+        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens) 
+    }
+    
+    func signInApple() async throws {
+        let method = SignInAppleMethod()
+        let tokens = try await method.startSignInWithAppleFlow()
+        try await AuthenticationManager.shared.signInWithApple(tokens: tokens)
     }
 }
-
 
 
 struct AuthenticationView: View {
@@ -111,15 +121,23 @@ struct AuthenticationView: View {
                                 
                             }
                         }
-                        .cornerRadius(8)
+                        .cornerRadius(6)
                         .padding()
                         .padding(.horizontal, 50)
                         
-                        SignInWithAppleButton { request in
-                            
-                        } onCompletion: { result in
-                            
-                        }
+                        Button(action: {
+                            Task {
+                                do{
+                                    try await viewModel.signInApple()
+                                    showAuthenticationView = false
+                                } catch {
+                                    print(Error.self)
+                                }
+                            }
+                        }, label: {
+                            SignInWithAppleView(type: .default, style: .black)
+                            .allowsHitTesting(false)
+                        })
                         .frame(height: 45)
                         .padding(.horizontal, 65)
                         Spacer()
