@@ -18,7 +18,7 @@ final class AccountViewModel: ObservableObject {
 }
 
 struct AccountView: View {
-    
+    @StateObject private var authViewModel = AuthenticationViewModel()
     @State private var firstName = ""
     @State private var toggle = false
     @StateObject private var viewModel = AccountViewModel()
@@ -53,7 +53,7 @@ struct AccountView: View {
                     VStack{
                         Text("First Name *")
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        TextField("", text: $firstName)
+                        TextField("", text: $authViewModel.name)
                         Text("Last Name *")
                             .frame(maxWidth: .infinity, alignment: .leading)
                         TextField("", text: $firstName)

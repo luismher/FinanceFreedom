@@ -106,8 +106,8 @@
             filePath = "FinanceFreedom/Authentication/AccountSettingsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "AccountSettingsView"
             landmarkType = "14">
          </BreakpointContent>

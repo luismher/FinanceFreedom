@@ -12,6 +12,12 @@ final class UpdateSettings: ObservableObject {
     
     @Published var authProviders: [AuthProviderOption] = []
     @Published var password = ""
+    @Published var authUser: AuthDataResultModel? = nil
+    
+    func loadAuthUser() {
+        self.authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
+    }
+    
     func loadAuthproviders() {
         if let provider = try? AuthenticationManager.shared.getProvider(){
             authProviders = provider
@@ -26,6 +32,22 @@ final class UpdateSettings: ObservableObject {
         try await AuthenticationManager.shared.updatePassword(password: password)
     }
     
+    func linkGoogleAccount() async throws {
+        let method = GoogleSignInMethod()
+        let tokens = try await  method.signIn()
+        self.authUser = try await AuthenticationManager.shared.linkGoogle(tokens: tokens)
+    }
+    
+    func linkAppleAccount() async throws {
+        let method = SignInAppleMethod()
+        let tokens = try await  method.startSignInWithAppleFlow()
+        self.authUser = try await AuthenticationManager.shared.linkApple(tokens: tokens)
+    }
+    func linkEmailAccount() async throws {
+        let email = ""
+        let password = ""
+        self.authUser = try await AuthenticationManager.shared.linkEmail(email: email, password: password)
+    }
 }
 
 
@@ -34,25 +56,16 @@ struct AccountSettingsView: View {
     @Binding var showUpdatePassword: Bool
     var body: some View {
         NavigationStack {
-            VStack{
+            VStack{ 
                 List {
                     if viewModel.authProviders.contains(.email) {
-                        Section(header: Text("Change Password")){
-                            SecureField("Type new password..", text: $viewModel.password)
-                            
-                            Button ("Update Password"){
-                                Task {
-                                    do{
-                                        try await viewModel.updatePassword()
-                                        showUpdatePassword = false
-                                        print("Updated Succesful!")
-                                    } catch {
-                                        print("Error")
-                                    }
-                                }
-                            }.buttonStyle(buttonBlue())
-                        }
+                        accountSettings
                     }
+                    
+                    if viewModel.authUser? .isAnonymus == true {
+                        linkSection
+                    }
+
                     Section(header: Text("Delete Account")){
                             Button("Delete Account"){
                         }.buttonStyle(buttonRed())
@@ -60,6 +73,7 @@ struct AccountSettingsView: View {
                 }
                 .onAppear{
                     viewModel.loadAuthproviders()
+                    viewModel.loadAuthUser()
                 }
             }.navigationTitle("Account Settings")
         }
@@ -69,3 +83,68 @@ struct AccountSettingsView: View {
 #Preview {
     AccountSettingsView(showUpdatePassword: .constant(false))
 }
+
+extension AccountSettingsView {
+    
+    private var accountSettings: some View {
+        
+        Section(header: Text("Change Password")){
+            SecureField("Type new password..", text: $viewModel.password)
+            
+            Button ("Update Password"){
+                Task {
+                    do{
+                        try await viewModel.updatePassword()
+                        showUpdatePassword = false
+                        print("Updated Succesful!")
+                    } catch {
+                        print("Error")
+                    }
+                }
+            }.buttonStyle(buttonBlue())
+        }
+    }
+    
+    private var linkSection: some View {
+        
+        Section(header: Text("Link Accounts")){
+             
+            Button ("Link Google Account"){
+                Task {
+                    do{
+                        try await viewModel.linkGoogleAccount()
+                        showUpdatePassword = false
+                        print("Google Linked!")
+                    } catch {
+                        print("Error")
+                    }
+                }
+            }.buttonStyle(buttonBlue())
+            
+            Button ("Link Apple Account"){
+                Task {
+                    do{
+                        try await viewModel.linkAppleAccount()
+                        showUpdatePassword = false
+                        print("Apple Linked!")
+                    } catch {
+                        print("Error")
+                    }
+                }
+            }.buttonStyle(buttonBlue())
+            
+            Button ("Link Email Account"){
+                Task {
+                    do{
+                        try await viewModel.linkEmailAccount()
+                        showUpdatePassword = false
+                        print("Email Linked!")
+                    } catch {
+                        print("Error")
+                    }
+                }
+            }.buttonStyle(buttonBlue())
+        }
+    }
+}
+

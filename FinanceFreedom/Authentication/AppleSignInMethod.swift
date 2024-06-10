@@ -125,7 +125,7 @@ extension SignInAppleMethod: ASAuthorizationControllerDelegate {
         completionHandler?(.success(tokens))
     }
     
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError erro r: Error) {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         // Handle error.
         print("Sign in with Apple errored: \(error)")
         completionHandler? (.failure(URLError(.badURL)))

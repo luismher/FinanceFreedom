@@ -106,11 +106,11 @@
 				709AF0AD2BC0238D003ABF60 /* AuthenticationView.swift */,
 				708847122C05481900828CAB /* ResetPasswordView.swift */,
 				708847042C044F4000828CAB /* CreateAccountView.swift */,
-				7029B55C2C07C7B30032208C /* GoogleSignInMethod.swift */,
 				709AF0B62BC0249C003ABF60 /* AccountView.swift */,
-				7029B55E2C0A5A7A0032208C /* AppleSignInMethod.swift */,
 				708636CD2C056FC400336FD1 /* AccountSettingsView.swift */,
 				708847062C04525B00828CAB /* AuthenticationManager.swift */,
+				7029B55C2C07C7B30032208C /* GoogleSignInMethod.swift */,
+				7029B55E2C0A5A7A0032208C /* AppleSignInMethod.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";

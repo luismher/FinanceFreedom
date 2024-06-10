@@ -85,11 +85,11 @@ struct buttonWhite: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(configuration.isPressed ? Color.secondaryColor3 : Color.secondaryColor4)
-            .frame(maxWidth: .infinity)
-            .font(.sectionCategories())
+            .frame(width: 210, height: 20 )
+            .font(.sectionTitle())
             .padding(10)
-            .background(configuration.isPressed ? Color.primaryColor1 : Color.secondaryColor3)
-            .cornerRadius(8)
+            .background(configuration.isPressed ? Color.secondaryColor4 : Color.secondaryColor3)
+            .cornerRadius(6)
             .padding(.horizontal)
     }
 
@@ -103,7 +103,7 @@ struct buttonWhiteCategory: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(configuration.isPressed ? Color.secondaryColor3 : Color.secondaryColor4)
-            .frame(maxWidth: .infinity)
+            .frame(height: 45)
             .padding(10)
             .background(configuration.isPressed ? Color.primaryColor1 : Color.secondaryColor3)
             .cornerRadius(8)
@@ -161,9 +161,10 @@ struct buttonGray: ButtonStyle {
         configuration.label
             .foregroundColor(configuration.isPressed ? Color.black : Color.white)
             .frame(maxWidth: .infinity)
+            .font(.sectionTitle())
             .padding(10)
             .background(configuration.isPressed ? Color.secondaryColor3 : Color.primaryColor2)
-            .cornerRadius(8)
+            .cornerRadius(6)
             .padding(.horizontal)
     }
 }
@@ -212,7 +213,7 @@ extension Font {
         return Font.custom("Karla", size: 14) .weight(.medium)
     }
     static func sectionTitle() -> Font {
-        return Font.custom("Karla", size: 18) .weight(.black)
+        return Font.custom("Karla", size: 16) .weight(.black)
     }
     static func sectionCategories() -> Font {
         return Font.custom("Karla", size: 12) .weight(.bold)

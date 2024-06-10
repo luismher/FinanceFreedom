@@ -15,25 +15,23 @@ import CryptoKit
 
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
-    
-    private var currentNonce: String?
+        
+    @Published var name = ""
     @Published var email = ""
     @Published var password = ""
-    let signInAppleMethod = SignInAppleMethod()
     
     func signIn() async throws {
-/*        guard !email.isEmpty, !password.isEmpty else {
-            print("No email or password found! ")
-            return
-        }
-    */
+
         try await AuthenticationManager.shared.signIn(email: email, password: password)
     }
     
     func signInGoogle() async throws {
         let method = GoogleSignInMethod()
         let tokens = try await  method.signIn()
-        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens) 
+        if let user = GIDSignIn.sharedInstance.currentUser {
+            name = user.profile?.name ?? "Unknown User" 
+            }
+        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
     }
     
     func signInApple() async throws {
@@ -41,13 +39,17 @@ final class AuthenticationViewModel: ObservableObject {
         let tokens = try await method.startSignInWithAppleFlow()
         try await AuthenticationManager.shared.signInWithApple(tokens: tokens)
     }
+    
+    func signInAnonymus() async throws {
+        try await AuthenticationManager.shared.signInAnonymus()
+    }
 }
 
 
 struct AuthenticationView: View {
     
     @StateObject private var viewModel = AuthenticationViewModel()
-    @State private var userName = ""
+    @State private var name = ""
     @Binding var showCreateAccountView: Bool
     @Binding var showResetPasswordView: Bool
     @Binding var showAuthenticationView: Bool 
@@ -114,6 +116,7 @@ struct AuthenticationView: View {
                             Task {
                                 do{
                                     try await viewModel.signInGoogle()
+                                    name = viewModel.name
                                     showAuthenticationView = false
                                 } catch {
                                     print(Error.self)
@@ -140,6 +143,22 @@ struct AuthenticationView: View {
                         })
                         .frame(height: 45)
                         .padding(.horizontal, 65)
+                        Spacer()
+                        
+                        Button(action: {
+                            Task {
+                                do{
+                                    try await viewModel.signInAnonymus()
+                                    showAuthenticationView = false
+                                } catch {
+                                    print(Error.self)
+                                }
+                            }
+                        }, label: {
+                            Text("Guest")
+                            .allowsHitTesting(false)
+                        }).buttonStyle(buttonWhite())
+                            .padding(.top)
                         Spacer()
                         
                     }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
