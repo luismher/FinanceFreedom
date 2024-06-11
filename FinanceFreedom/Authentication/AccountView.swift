@@ -94,7 +94,7 @@ struct AccountView: View {
                 }
             }
         }.toolbar(content: {
-            NavigationLink { AccountSettingsView(showUpdatePassword: $showUpdatePassword )
+            NavigationLink { AccountSettingsView(showUpdatePassword: $showUpdatePassword, showAuthenticationView: $showAuthenticationView )
             } label: {
                 Text("Settings")
             }

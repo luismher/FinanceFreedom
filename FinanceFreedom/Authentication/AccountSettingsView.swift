@@ -13,7 +13,7 @@ final class UpdateSettings: ObservableObject {
     @Published var authProviders: [AuthProviderOption] = []
     @Published var password = ""
     @Published var authUser: AuthDataResultModel? = nil
-    
+
     func loadAuthUser() {
         self.authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
     }
@@ -48,12 +48,18 @@ final class UpdateSettings: ObservableObject {
         let password = ""
         self.authUser = try await AuthenticationManager.shared.linkEmail(email: email, password: password)
     }
+    
+    func delete() async throws {
+        try await AuthenticationManager.shared.delete()
+    }
 }
 
 
 struct AccountSettingsView: View {
     @StateObject var viewModel = UpdateSettings()
     @Binding var showUpdatePassword: Bool
+    @Binding var showAuthenticationView: Bool
+
     var body: some View {
         NavigationStack {
             VStack{ 
@@ -68,6 +74,14 @@ struct AccountSettingsView: View {
 
                     Section(header: Text("Delete Account")){
                             Button("Delete Account"){
+                                Task{
+                                    do {
+                                       try await viewModel.delete()
+                                        showAuthenticationView = true
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
                         }.buttonStyle(buttonRed())
                     }
                 }
@@ -81,7 +95,7 @@ struct AccountSettingsView: View {
 }
 
 #Preview {
-    AccountSettingsView(showUpdatePassword: .constant(false))
+    AccountSettingsView(showUpdatePassword: .constant(false), showAuthenticationView: .constant(false))
 }
 
 extension AccountSettingsView {
